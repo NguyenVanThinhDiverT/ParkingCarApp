@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard"
+    android:background="#BF7E7E">
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/_layout1"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="#1F8F23">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/slot1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SLOT 1"
+                        android:textSize="50sp"
+                        android:transitionName="_Pending"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/status1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PAID"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnslot1"
+                        android:backgroundTint="@color/white"
+                        android:text="PARK A VEHICLE"
+                        android:textColor="@color/black"
+                        android:onClick="button1changed"
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="200dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/_layout2"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="#E82020">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/slot2"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="SLOT 2"
+                        android:textSize="50sp"
+                        android:transitionName="_slot2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:id="@+id/status2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PARKED"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnslot2"
+                        android:backgroundTint="@color/white"
+                        android:text="PARK A VEHICLE"
+                        android:textColor="@color/black"
+                        android:onClick="button2changed"
+
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="400dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/_layout3"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="@color/colorPrimary"
+                >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/slot3"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="SLOT 3"
+                        android:textSize="50sp"
+                        android:transitionName="_slot3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+
+                        android:id="@+id/status3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="WAIT"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnslot3"
+                        android:backgroundTint="@color/white"
+                        android:text="PARK A VEHICLE"
+                        android:textColor="@color/black"
+                        android:onClick="button3changed"
+
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:paddingTop="600dp"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+
+
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/_layout4"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:backgroundTint="#1F8F23"
+                >
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/slot4"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        android:text="SLOT 4"
+                        android:textSize="50sp"
+                        android:transitionName="_slot4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+
+                        android:id="@+id/status4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PAID"
+                        android:textSize="20sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/btnslot4"
+                        android:backgroundTint="@color/white"
+                        android:text="PARK A VEHICLE"
+                        android:textColor="@color/black"
+                        android:onClick="button4changed"
+
+                        />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+<!--    <Button-->
+<!--        android:id="@+id/parkBtn"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:backgroundTint="#FFFFFF"-->
+<!--        android:onClick="parking"-->
+<!--        android:text="Park A Vehicle"-->
+<!--        android:layout_marginBottom="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:layout_alignParentRight="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:gravity="center"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:textColor="#131212" />-->
+
+</RelativeLayout>

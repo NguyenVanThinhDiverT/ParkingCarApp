@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterForm"
+
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:paddingTop="30dp"
+    android:orientation="vertical">
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/driverName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Driver Name"
+        android:transitionName="_driverName">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/driverNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Driver Number"
+        android:transitionName="_driverNumber">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/numberPlate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:hint="Number Plate"
+        android:transitionName="_numberPlate">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawablePadding="10dp"
+
+            />
+
+    </com.google.android.material.textfield.TextInputLayout>
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/vehicleType"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:hint="Car"-->
+<!--        android:transitionName="_Car">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawablePadding="10dp"-->
+
+<!--            />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+<!--    <com.google.android.material.textfield.TextInputLayout-->
+<!--        android:id="@+id/Amount"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:hint="Amount"-->
+<!--        android:transitionName="_Amount">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:drawablePadding="10dp"-->
+
+<!--            />-->
+
+<!--    </com.google.android.material.textfield.TextInputLayout>-->
+    <!--        <EditText-->
+    <!--            android:id="@+id/driverName"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="10dp"-->
+    <!--            android:background="@color/white"-->
+    <!--            android:transitionName="_DriverName"-->
+    <!--            android:hint="Driver Name"-->
+    <!--            android:padding="15dp" />-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/numberPlate"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:hint="Number Plate"-->
+    <!--        android:transitionName="_NumberPlate"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/driverNumber"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:hint="Driver Number(Option)"-->
+    <!--        android:transitionName="_DriverNumber"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/vehicleType"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:hint="Vehicle Type"-->
+    <!--        android:transitionName="_VehicleType"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
+    <!--    <EditText-->
+    <!--        android:id="@+id/Amount"-->
+    <!--        android:transitionName="_Amount"-->
+    <!--        android:layout_marginTop="10dp"-->
+    <!--        android:hint="Amount"-->
+    <!--        android:padding="15dp"-->
+    <!--        android:background="@color/white"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"/>-->
+
+    <Button
+        android:text="Register Information"
+        android:onClick="RegisterForm"
+        android:transitionName="_ParkBtn"
+        android:backgroundTint="@color/teal_200"
+        android:id="@+id/ParkBtn"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

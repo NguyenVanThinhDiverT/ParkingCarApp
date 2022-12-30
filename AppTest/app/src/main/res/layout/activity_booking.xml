@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/card3"
+    tools:context=".BookingActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10sp"
+            android:layout_marginLeft="10sp"
+            android:layout_marginRight="10sp"
+
+            >
+            
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="100sp"
+                    android:layout_height="100sp"
+                    android:src="@drawable/_nh___i_di_n_fb"
+                    android:padding="5sp"/>
+                
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Nguyen Van Thinh"
+                    android:fontFamily="@font/bungee"
+                    android:textSize="30sp"
+                    android:textColor="#000"
+                    android:layout_gravity="center"
+                    android:textAlignment="center"
+                    />
+
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:rowCount="2"
+            android:columnCount="2"
+            android:layout_marginTop="10sp"
+            android:layout_marginRight="10sp"
+            android:layout_marginLeft="10sp"
+           >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/c1"
+
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="10sp"
+                android:layout_margin="10sp"
+                app:cardBackgroundColor="@color/teal_700"
+                
+                >
+                <TextView
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:layout_gravity="center"
+                    android:textColor="@color/black"/>
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/c2"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="10sp"
+                android:layout_margin="10sp"
+                app:cardBackgroundColor="@color/teal_700"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/c3"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="3"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="10sp"
+                android:layout_margin="10sp"
+                app:cardBackgroundColor="@color/teal_700"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/c4"
+                android:layout_gravity="fill"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                app:cardCornerRadius="10sp"
+                android:layout_margin="10sp"
+                app:cardBackgroundColor="@color/teal_700"
+
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:paddingTop="30sp"
+                    android:paddingBottom="30sp"
+                    android:text="4"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+        </GridLayout>
+
+
+
+<!--        <LinearLayout-->
+<!--            android:orientation="vertical"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content">-->
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/driverName"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:hint="Driver Name">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/driverNumber"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:hint="Driver Number">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/numberPlate"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:hint="Number Plate">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/Date"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:hint="Date">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <com.google.android.material.textfield.TextInputLayout-->
+<!--                android:id="@+id/Status"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:hint="Status">-->
+<!--                <com.google.android.material.textfield.TextInputEditText-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"/>-->
+
+<!--            </com.google.android.material.textfield.TextInputLayout>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/btnupdate"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="66dp"-->
+<!--                android:backgroundTint="@color/green"-->
+<!--                android:fontFamily="@font/bungee"-->
+<!--                android:onClick="updateinf"-->
+<!--                android:text="Update New Information" />-->
+
+
+<!--        </LinearLayout>-->
+
+<!--        <Button-->
+<!--            android:paddingTop="20dp"-->
+<!--            android:paddingBottom="20dp"-->
+<!--            android:id="@+id/registerVehicle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_alignParentBottom="true"-->
+<!--            android:gravity="right"-->
+<!--            android:layout_gravity="right"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:backgroundTint="@color/card2"-->
+<!--            android:text="Register Information"-->
+<!--            android:onClick="RegisterVehicle"-->
+
+<!--            android:textColor="#131212" />-->
+    </LinearLayout>
+
+
+
+
+
+
+
+</ScrollView>

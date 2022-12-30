@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    android:layout_marginLeft="20dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginTop="10dp"
+    android:background="@color/teal_200"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+     >
+
+    <TextView
+        android:id="@+id/status"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Status"
+        android:transitionName="_Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/vehicleType"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:transitionName="_vehicleType"
+        android:text="Car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/driverName"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Driver Name"
+        android:transitionName="_DriverName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/driverNumber"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Driver Number"
+        android:transitionName="_DriverNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/numberPlate"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Number Plate"
+        android:transitionName="_NumberPlate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/Amount"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Amount"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+    <TextView
+        android:id="@+id/Date"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:text="Date"
+        android:transitionName="_Date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+
+</LinearLayout>
