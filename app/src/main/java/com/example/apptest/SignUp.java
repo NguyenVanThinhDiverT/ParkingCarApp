@@ -3,14 +3,25 @@ package com.example.apptest;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Calendar;
+import java.util.UUID;
 
 
 public class SignUp extends AppCompatActivity {
@@ -19,13 +30,21 @@ public class SignUp extends AppCompatActivity {
 
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-
+    long time;
+    String id;
     String userID;
+    FirebaseAuth fAuth;
+    FirebaseFirestore fStore;
     String name, username, email, phoneNo, password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
         setContentView(R.layout.activity_sign_up);
+        fAuth = FirebaseAuth.getInstance();
+        fStore = FirebaseFirestore.getInstance();
+
         //Hooks to all xml elements in activity_sign_up.xml
         regName = findViewById(R.id.reg_name);
         regUsername = findViewById(R.id.reg_username);
@@ -36,6 +55,13 @@ public class SignUp extends AppCompatActivity {
         regToLoginBtn = findViewById(R.id.reg_login_btn);
 
         rootNode = FirebaseDatabase.getInstance();
+
+        regToLoginBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                gotoLogin();
+            }
+        });
         //Save data in FireBase on button click
 //        regBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -54,6 +80,11 @@ public class SignUp extends AppCompatActivity {
 //        });//Register Button method end
 
     }//onCreate Method End
+
+    private void gotoLogin() {
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+    }
 
 
     private Boolean validateName() {
@@ -157,9 +188,11 @@ public class SignUp extends AppCompatActivity {
 //        Intent intent = new Intent(getApplicationContext(),VerifyPhoneNo.class);
 //        intent.putExtra("phoneNo",phoneNo);
 //        startActivity(intent);
+        time = Calendar.getInstance().getTimeInMillis();
+        id = UUID.randomUUID().toString();
 
-
-        UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password);
+        UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password,
+                id,fAuth.getCurrentUser().getUid(),time);
         reference.child(username).setValue(helperClass);
 
         Toast.makeText(this,"Your Account has been created successfully!", Toast.LENGTH_SHORT) .show();
@@ -169,6 +202,37 @@ public class SignUp extends AppCompatActivity {
 //        finish();
 
     }
+
+//    private void UserExist() {
+//        final String userEnteredUsername = regUsername.getEditText().getText().toString().trim();
+//
+//
+//
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
+//
+//        Query checkUser = reference.orderByChild("username").equalTo(userEnteredUsername);
+//
+//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                if(snapshot.exists()){
+//                    Toast.makeText(SignUp.this,"Username is exist",Toast.LENGTH_LONG).show();
+//
+//                }
+//                else{
+////                    username.setError("No such User exist");
+////                    username.requestFocus();
+////                    Toast.makeText(SignUp.this,"Username is exist",Toast.LENGTH_LONG).show();
+//                }
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//                Toast.makeText(SignUp.this, error.getMessage(),Toast.LENGTH_SHORT).show();
+//
+//            }
+//        });
+//    }
 
 
 

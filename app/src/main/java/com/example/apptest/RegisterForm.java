@@ -49,10 +49,9 @@ public class RegisterForm extends AppCompatActivity {
                 String id= UUID.randomUUID().toString();
                 ParkCarModel parkCarModel = new ParkCarModel();
                 parkCarModel.setId(id);
-                parkCarModel.setNumberPlate(numberPlate);
-                parkCarModel.setDriverName(driverName);
+//
                 parkCarModel.setTime(time);
-                parkCarModel.setDriverNumber(driverNumber);
+//                parkCarModel.setDriverNumber(driverNumber);
                 parkCarModel.setUserId(fAuth.getCurrentUser().getUid());
                 parkCarModel.setStatus("PAID");
 

@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.MyViewHolder> {
+//    private CarsAdapter adapter;
     private Context context;
     private List<ParkCarModel> parkCarModelList;
     private CarAdapterInterface listener;
@@ -30,6 +31,11 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.MyViewHolder> 
         parkCarModelList.add(parkCarModel);
         notifyDataSetChanged();
     }
+    public void remove(ParkCarModel parkCarModel){
+        parkCarModelList.remove(parkCarModel);
+        notifyDataSetChanged();
+    }
+
     public void remove(int pos){
         parkCarModelList.remove(pos);
         notifyDataSetChanged();
@@ -44,14 +50,15 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
             ParkCarModel model = parkCarModelList.get(position);
-            holder.driverNumber.setText(model.getDriverNumber());
-            holder.driverName.setText(model.getDriverName());
-            holder.numberPlate.setText(model.getNumberPlate());
+//            holder.driverNumber.setText(model.getDriverNumber());
+//            holder.driverName.setText(model.getDriverName());
+//            holder.numberPlate.setText(model.getNumberPlate());
 //            holder.fee.setText(model.getFee());
             holder.status.setText(model.getStatus());
             String[] dateAndTime=longIntoString(model.getTime());
             holder.time.setText(dateAndTime[0]+"\n"+dateAndTime[1]);
 //            holder.vehicleType.setText(model.getVehicleType());
+            holder.slot.setText(model.getSlot());
 
     }
 
@@ -61,22 +68,32 @@ public class CarsAdapter extends RecyclerView.Adapter<CarsAdapter.MyViewHolder> 
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView vehicleType, driverName, driverNumber, numberPlate, fee, time, status;
+        TextView vehicleType, driverName, driverNumber, numberPlate, fee, time, status, slot;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            vehicleType=itemView.findViewById(R.id.vehicleType);
-            driverName=itemView.findViewById(R.id.driverName);
-            driverNumber=itemView.findViewById(R.id.driverNumber);
-            numberPlate=itemView.findViewById(R.id.numberPlate);
-            fee=itemView.findViewById(R.id.Amount);
+//            vehicleType=itemView.findViewById(R.id.vehicleType);
+//            driverName=itemView.findViewById(R.id.driverName);
+//            driverNumber=itemView.findViewById(R.id.driverNumber);
+//            numberPlate=itemView.findViewById(R.id.numberPlate);
+//            fee=itemView.findViewById(R.id.Amount);
             time=itemView.findViewById(R.id.Date);
-            status=itemView.findViewById(R.id.status);
+            status=itemView.findViewById(R.id.statuspark);
+            slot=itemView.findViewById(R.id.slot);
 
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
-                    listener.OnLongClick(getAdapterPosition(), parkCarModelList.get(getAdapterPosition()).getId());
+                    listener.OnLongClick(getAdapterPosition(), parkCarModelList.get(getAdapterPosition()).getSlot());
                     return true;
+                }
+            });
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    listener.OnClick(getAdapterPosition(), parkCarModelList.get(getAdapterPosition()).getSlot());
+//                    remove(getAdapterPosition());
+//                    notifyItemRemoved(getAdapterPosition());
                 }
             });
         }

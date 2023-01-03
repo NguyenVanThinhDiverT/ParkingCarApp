@@ -10,18 +10,23 @@ public class ParkCarModel {
     private long time;
     private String userId;
     private String status;
+    private String slot;
 
     public ParkCarModel() {
+
     }
 
-    public ParkCarModel(String id, String driverName, String driverNumber, String numberPlate, long time, String userId, String status) {
+    public ParkCarModel(String id,
+//                        String driverName, String driverNumber, String numberPlate,
+                        long time, String userId, String status, String slot) {
         this.id = id;
-        this.driverName = driverName;
-        this.driverNumber = driverNumber;
-        this.numberPlate = numberPlate;
+//        this.driverName = driverName;
+//        this.driverNumber = driverNumber;
+//        this.numberPlate = numberPlate;
         this.time = time;
         this.userId = userId;
         this.status = status;
+        this.slot = slot;
     }
 
     public String getStatus() {
@@ -40,29 +45,30 @@ public class ParkCarModel {
         this.id = id;
     }
 
-    public String getDriverName() {
-        return driverName;
-    }
+//    public String getDriverName() {
+//        return driverName;
+//    }
+//
+//    public void setDriverName(String driverName) {
+//        this.driverName = driverName;
+//    }
+//
+//    public String getDriverNumber() {
+//        return driverNumber;
+//    }
+//
+//    public void setDriverNumber(String driverNumber) {
+//        this.driverNumber = driverNumber;
+//    }
+//
+//    public String getNumberPlate() {
+//        return numberPlate;
+//    }
+//
+//    public void setNumberPlate(String numberPlate) {
+//        this.numberPlate = numberPlate;
+//    }
 
-    public void setDriverName(String driverName) {
-        this.driverName = driverName;
-    }
-
-    public String getDriverNumber() {
-        return driverNumber;
-    }
-
-    public void setDriverNumber(String driverNumber) {
-        this.driverNumber = driverNumber;
-    }
-
-    public String getNumberPlate() {
-        return numberPlate;
-    }
-
-    public void setNumberPlate(String numberPlate) {
-        this.numberPlate = numberPlate;
-    }
 
 //    public String getVehicleType() {
 //        return vehicleType;
@@ -94,5 +100,13 @@ public class ParkCarModel {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getSlot() {
+        return slot;
+    }
+
+    public void setSlot(String slot) {
+        this.slot = slot;
     }
 }

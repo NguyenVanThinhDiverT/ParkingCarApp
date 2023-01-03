@@ -79,12 +79,12 @@ public class ParkCarActivity extends AppCompatActivity {
 
         ParkCarModel parkCarModel = new ParkCarModel();
         parkCarModel.setId(id);
-        parkCarModel.setNumberPlate(NumberPlate_2);
-        parkCarModel.setDriverName(DriverName_2);
+//        parkCarModel.setNumberPlate(NumberPlate_2);
+//        parkCarModel.setDriverName(DriverName_2);
         parkCarModel.setTime(time);
 //        parkCarModel.setVehicleType(VehicleType_2);
 //        parkCarModel.setFee(Amount_2);
-        parkCarModel.setDriverNumber(DriverNumber_2);
+//        parkCarModel.setDriverNumber(DriverNumber_2);
         parkCarModel.setUserId(fAuth.getCurrentUser().getUid());
         parkCarModel.setStatus("Parked");
 
