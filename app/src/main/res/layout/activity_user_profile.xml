@@ -158,15 +158,15 @@
                             android:text="20"
                             android:textSize="20sp" />
 
-                        <TextView
-                            android:id="@+id/Booking_desc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_below="@id/booking_label"
-                            android:layout_centerHorizontal="true"
-                            android:includeFontPadding="false"
-                            android:text="Booking"
-                            android:textSize="20sp" />
+<!--                        <TextView-->
+<!--                            android:id="@+id/Booking_desc"-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:layout_below="@id/booking_label"-->
+<!--                            android:layout_centerHorizontal="true"-->
+<!--                            android:includeFontPadding="false"-->
+<!--                            android:text="Booking"-->
+<!--                            android:textSize="20sp" />-->
 
                         <Button
                             android:id="@+id/BookingBtn"
@@ -228,7 +228,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@color/lightWhite"
-                    android:hint="Full Name">
+                    android:hint="Full Name"
+                    android:textColorHint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -249,7 +250,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@color/lightWhite"
-                    android:hint="E-mail">
+                    android:hint="E-mail"
+                    android:textColorHint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -271,7 +273,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@color/lightWhite"
-                    android:hint="Phone Number">
+                    android:hint="Phone Number"
+                    android:textColorHint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -292,7 +295,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
                     android:background="@color/lightWhite"
-                    android:hint="Password">
+                    android:hint="Password"
+                    android:textColorHint="@color/black">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"

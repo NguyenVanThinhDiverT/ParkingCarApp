@@ -28,7 +28,7 @@ public class ParkCarModel {
         this.time = time;
         this.userId = userId;
         this.status = status;
-        this.slot = slot;
+        this.slot = slot + "1";
     }
 
     @PropertyName("status")

@@ -62,6 +62,12 @@ public class SignUp extends AppCompatActivity {
                 gotoLogin();
             }
         });
+        regBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerUser();
+            }
+        });
         //Save data in FireBase on button click
 //        regBtn.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -171,7 +177,7 @@ public class SignUp extends AppCompatActivity {
         }
     }
 
-    public void registerUser(View view){
+    public void registerUser(){
         if(!validateName() | !validatePassword() | !validatePhoneNo() | !validateEmail() | !validateUsername())
         {
             return;
@@ -179,11 +185,11 @@ public class SignUp extends AppCompatActivity {
 
         reference = rootNode.getReference("users");
 
-         name = regName.getEditText().getText().toString();
-         username = regUsername.getEditText().getText().toString();
-         email = regEmail.getEditText().getText().toString();
-         phoneNo = regPhoneNo.getEditText().getText().toString();
-         password = regPassword.getEditText().getText().toString();
+        name = regName.getEditText().getText().toString();
+        username = regUsername.getEditText().getText().toString();
+        email = regEmail.getEditText().getText().toString();
+        phoneNo = regPhoneNo.getEditText().getText().toString();
+        password = regPassword.getEditText().getText().toString();
 
 //        Intent intent = new Intent(getApplicationContext(),VerifyPhoneNo.class);
 //        intent.putExtra("phoneNo",phoneNo);
@@ -191,14 +197,21 @@ public class SignUp extends AppCompatActivity {
         time = Calendar.getInstance().getTimeInMillis();
         id = UUID.randomUUID().toString();
 
-        UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password,
-                id,fAuth.getCurrentUser().getUid(),time);
-        reference.child(username).setValue(helperClass);
+//        UserHelperClass helperClass = new UserHelperClass(name, username, email, phoneNo, password,
+//                id,"123456789",time);
+//        reference.child(username).setValue(helperClass);
 
-        Toast.makeText(this,"Your Account has been created successfully!", Toast.LENGTH_SHORT) .show();
+        Intent intent = new Intent(getApplicationContext(),VerifyPhoneNo.class);
+        intent.putExtra("phoneNo",phoneNo);
+        intent.putExtra("name",name);
+        intent.putExtra("username",username);
+        intent.putExtra("email",email);
+        intent.putExtra("password",password);
+        startActivity(intent);
+//        Toast.makeText(this,"Your Account has been created successfully!", Toast.LENGTH_SHORT) .show();
 //
-        Intent intent2 = new Intent(getApplicationContext(), Login.class);
-        startActivity(intent2);
+//        Intent intent2 = new Intent(getApplicationContext(), Login.class);
+//        startActivity(intent2);
 //        finish();
 
     }
