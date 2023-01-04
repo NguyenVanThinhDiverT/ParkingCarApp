@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="400dp"
-        android:layout_height="500dp"
+        android:layout_height="400dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
@@ -31,7 +31,7 @@
         android:text="Parking Car"
         android:textAlignment="center"
         android:transitionName="logo_text"
-        android:textSize="70sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,7 +45,8 @@
         android:fontFamily="@font/antic"
         android:text="Welcome to parking car app"
         android:textAlignment="center"
-        android:textSize="18sp"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />

@@ -227,7 +227,7 @@
             android:id="@+id/Recycle"
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="380dp"
             tools:listitem="@layout/park_item"/>
         <!--        <TextView-->
         <!--            android:paddingBottom="30sp"-->
@@ -364,7 +364,9 @@
         app:itemTextColor="@drawable/selectbotnav"
         app:menu="@menu/menu"
 
-        />
+        >
+
+    </com.google.android.material.bottomnavigation.BottomNavigationView>
 
 
 

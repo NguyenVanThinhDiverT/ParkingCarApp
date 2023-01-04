@@ -1,5 +1,7 @@
 package com.example.apptest;
 
+import com.google.firebase.database.PropertyName;
+
 public class ParkCarModel {
     private String id;
     private String driverName;
@@ -29,6 +31,7 @@ public class ParkCarModel {
         this.slot = slot;
     }
 
+    @PropertyName("status")
     public String getStatus() {
         return status;
     }
@@ -37,6 +40,8 @@ public class ParkCarModel {
         this.status = status;
     }
 
+
+    @PropertyName("id")
     public String getId() {
         return id;
     }
@@ -85,7 +90,7 @@ public class ParkCarModel {
 //    public void setFee(String fee) {
 //        this.fee = fee;
 //    }
-
+    @PropertyName("time")
     public long getTime() {
         return time;
     }
@@ -94,6 +99,7 @@ public class ParkCarModel {
         this.time = time;
     }
 
+    @PropertyName("userID")
     public String getUserId() {
         return userId;
     }
@@ -102,6 +108,7 @@ public class ParkCarModel {
         this.userId = userId;
     }
 
+    @PropertyName("slot")
     public String getSlot() {
         return slot;
     }

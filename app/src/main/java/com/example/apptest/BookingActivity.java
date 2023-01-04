@@ -28,6 +28,7 @@ import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -58,7 +59,7 @@ public class BookingActivity extends AppCompatActivity
     //    public Button buttonregister, buttonupdate;
     FirebaseAuth fAuth;
     FirebaseFirestore fStore;
-    ProgressDialog dialog;
+//    ProgressDialog dialog;
     CarsAdapter adapter;
     TextView username;
     //    AlertDialog.Builder builder;
@@ -70,7 +71,8 @@ public class BookingActivity extends AppCompatActivity
     String status_init;
     Button buttoncheck, buttondelete;
     RecyclerView CarRecycle;
-
+    FirebaseUser user;
+    String UserId;
 
     //    TextInputLayout DriverName, DriverNumber, NumberPlate, Date, Status;
     @SuppressLint("MissingInflatedId")
@@ -80,7 +82,7 @@ public class BookingActivity extends AppCompatActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         setContentView(R.layout.activity_booking);
-        status_init = "PAIR";
+        status_init = "EMPTY";
 
         adapter = new CarsAdapter(this, this);
 
@@ -88,7 +90,7 @@ public class BookingActivity extends AppCompatActivity
         fAuth = FirebaseAuth.getInstance();
         fStore = FirebaseFirestore.getInstance();
 
-        dialog = new ProgressDialog(this);
+//        dialog = new ProgressDialog(this);
         card1 = (CardView) findViewById(R.id.c1);
         card2 = (CardView) findViewById(R.id.c2);
         card3 = (CardView) findViewById(R.id.c3);
@@ -197,13 +199,13 @@ public class BookingActivity extends AppCompatActivity
                         checkdata("1");
 
                     }
-                }, 2000);
+                }, 2500);
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         checkdata("2");
 
                     }
-                }, 4000);
+                }, 5000);
 
 
                 handler.postDelayed(new Runnable() {
@@ -211,14 +213,14 @@ public class BookingActivity extends AppCompatActivity
                         checkdata("3");
 
                     }
-                }, 6000);
+                }, 7500);
 
                 handler.postDelayed(new Runnable() {
                     public void run() {
                         checkdata("4");
 
                     }
-                }, 8000);
+                }, 10000);
 
 
                 break;
@@ -238,18 +240,23 @@ public class BookingActivity extends AppCompatActivity
     public void registerPark(String slot, String status) {
         time = Calendar.getInstance().getTimeInMillis();
         id = UUID.randomUUID().toString();
+        user = fAuth.getCurrentUser();
+        if(user!=null){
+            UserId = user.getUid();
+        }
         parkCarModel.setId(id);
 //                parkCarModel.setNumberPlate(numberPlate);
 //                parkCarModel.setDriverName(driverName);
         parkCarModel.setTime(time);
 //                parkCarModel.setDriverNumber(driverNumber);
-        parkCarModel.setUserId(fAuth.getCurrentUser().getUid());
+        parkCarModel.setUserId(UserId);
         parkCarModel.setStatus(status);
         parkCarModel.setSlot(slot);
-
-        dialog.setTitle("Uploading");
-        dialog.setMessage("Data to the database");
-        dialog.show();
+//        if(dialog == null) {
+//            dialog.setTitle("Uploading");
+//            dialog.setMessage("Data to the database");
+//            dialog.show();
+//        }
 
         fStore.collection("parking")
                 .document(slot)
@@ -259,15 +266,18 @@ public class BookingActivity extends AppCompatActivity
                     public void onSuccess(Void unused) {
 //                        dialog.setTitle("Parking");
 //                        dialog.setMessage("Successful");
-
-                        dialog.cancel();
+//                        if(dialog.isShowing()) {
+//                            dialog.cancel();
+//                        }
 //                                finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        dialog.cancel();
+//                        if(dialog.isShowing()) {
+//                            dialog.cancel();
+//                        }
                         Toast.makeText(BookingActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
 
                     }
@@ -314,8 +324,8 @@ public class BookingActivity extends AppCompatActivity
 
                         for (DocumentSnapshot ds : dsList) {
                             ParkCarModel model = ds.toObject(ParkCarModel.class);
-                                        if (model.getStatus().equals("PAIR")) {
-//                            if (statusFromDB == "PAIR") {
+                                        if (model.getStatus().equals("EMPTY")) {
+//                            if (statusFromDB == "EMPTY") {
 //                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
                                 builder.setTitle("PARKED")
                                         .setMessage("Do you want to book this parking lot?")
@@ -420,8 +430,8 @@ public class BookingActivity extends AppCompatActivity
 
                         for (DocumentSnapshot ds : dsList) {
                             ParkCarModel model = ds.toObject(ParkCarModel.class);
-                                        if (model.getStatus().equals("PAIR")) {
-//                            if(statusFromDB == "PAIR") {
+                                        if (model.getStatus().equals("EMPTY")) {
+//                            if(statusFromDB == "EMPTY") {
 //                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
                                 builder.setTitle("REVERSED")
                                         .setMessage("You have 15 minutes to get to the parking spot!")
@@ -501,10 +511,10 @@ public class BookingActivity extends AppCompatActivity
 //
 //                        for (DocumentSnapshot ds : dsList) {
 //                            ParkCarModel model = ds.toObject(ParkCarModel.class);
-//                            if (model.getStatus().equals("PAIR")) {
-////                            if(statusFromDB == "PAIR"){
+//                            if (model.getStatus().equals("EMPTY")) {
+////                            if(statusFromDB == "EMPTY"){
 ////                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
-//                                changeStatus("PAIR", slot);
+//                                changeStatus("EMPTY", slot);
 //                                adapter.add(model);
 //
 //                                Toast.makeText(BookingActivity.this, "Slot Empty", Toast.LENGTH_SHORT).show();
@@ -578,10 +588,10 @@ public class BookingActivity extends AppCompatActivity
 
                         for (DocumentSnapshot ds : dsList) {
                             ParkCarModel model = ds.toObject(ParkCarModel.class);
-                                    if (model.getStatus().equals("PAIR")) {
-//                            if (statusFromDB == "PAIR") {
+                                    if (model.getStatus().equals("EMPTY")) {
+//                            if (statusFromDB == "EMPTY") {
 //                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
-                                changeStatus("PAIR", slot);
+                                changeStatus("EMPTY", slot);
                                 adapter.add(model);
 
                                 Toast.makeText(BookingActivity.this, "Slot Empty", Toast.LENGTH_SHORT).show();
@@ -642,7 +652,7 @@ public class BookingActivity extends AppCompatActivity
 
     public void chooseColor(String status, CardView cardChoose) {
         switch (status) {
-            case "PAIR":
+            case "EMPTY":
                 cardChoose.setCardBackgroundColor(getResources().getColor(R.color.green));
                 break;
             case "REVERSED":

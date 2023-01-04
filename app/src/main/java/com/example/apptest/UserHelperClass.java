@@ -1,5 +1,7 @@
 package com.example.apptest;
 
+import com.google.firebase.database.PropertyName;
+
 public class UserHelperClass {
 //    String name, username, email, phoneNo, password, id, userID, status, date;
     private String name;
@@ -33,6 +35,7 @@ public class UserHelperClass {
 
     }
 
+    @PropertyName("name")
     public String getName() {
         return name;
     }
@@ -41,6 +44,7 @@ public class UserHelperClass {
         this.name = name;
     }
 
+    @PropertyName("username")
     public String getUsername() {
         return username;
     }
@@ -49,6 +53,7 @@ public class UserHelperClass {
         this.username = username;
     }
 
+    @PropertyName("email")
     public String getEmail() {
         return email;
     }
@@ -57,6 +62,7 @@ public class UserHelperClass {
         this.email = email;
     }
 
+    @PropertyName("phoneNo")
     public String getPhoneNo() {
         return phoneNo;
     }
@@ -65,6 +71,7 @@ public class UserHelperClass {
         this.phoneNo = phoneNo;
     }
 
+    @PropertyName("password")
     public String getPassword() {
         return password;
     }
@@ -73,6 +80,7 @@ public class UserHelperClass {
         this.password = password;
     }
 
+    @PropertyName("id")
     public String getId() {
         return id;
     }
@@ -81,6 +89,7 @@ public class UserHelperClass {
         this.id = id;
     }
 
+    @PropertyName("userID")
     public String getUserID() {
         return userID;
     }
@@ -97,6 +106,7 @@ public class UserHelperClass {
 //        this.status = status;
 //    }
 
+    @PropertyName("time")
     public long getTime() {
         return time;
     }
