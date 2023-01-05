@@ -721,144 +721,6 @@ public class BookingActivity extends AppCompatActivity
 
     } //xong
 
-//    private void RESERVED1(String slot, Integer data) {
-//        statusreceived = data;
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        chooseCard(slot);
-//        fStore.collection("parking")
-//                .whereEqualTo("slot", slot)
-//                .get()
-//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                        List<DocumentSnapshot> dsList = queryDocumentSnapshots.getDocuments();
-//
-//                        for (DocumentSnapshot ds : dsList) {
-//                            ParkCarModel model = ds.toObject(ParkCarModel.class);
-////                            if (model.getStatus().equals("EMPTY")) {
-//                            if (statusreceived == 3) {
-//
-////                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
-//                                builder.setTitle("RESERVED")
-//                                        .setMessage("You have 15 minutes to get to the parking spot!")
-//                                        .setCancelable(true)
-//                                        .setIcon(R.drawable.waiting_car_icon)
-//                                        .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(DialogInterface dialog, int which) {
-////                                                model.setStatus("RESERVED");
-////                                                changeStatus("RESERVED", slot);
-//                                                chooseColor("RESERVED", cardAll);
-//                                                registerPark(slot, "RESERVED");
-//                                                adapter.add(model);
-//                                                DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Slot");
-//                                                reference.child(slot).child("status").setValue(5);
-//
-//                                                Toast.makeText(BookingActivity.this, "You book RESERVED successful", Toast.LENGTH_SHORT).show();
-////                                                                finish();
-//                                            }
-//                                        })
-//
-////                                        .setIcon(R.drawable.negative_button)
-//                                        .setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                                            @Override
-//                                            public void onClick(DialogInterface dialog, int which) {
-//                                                dialog.cancel();
-//                                            }
-//                                        })
-//                                        .show();
-//
-//
-//                                //
-//
-//
-////                            } else if (model.getStatus().equals("PARKED")) {
-//                            } else if (statusreceived == 4) {
-////                                    cardAll.setCardBackgroundColor(getResources().getColor(R.color.red));
-////                                changeStatus("PARKED", slot);
-//                                chooseColor("PARKED", cardAll);
-//                                registerPark(slot, "PARKED");
-//                                adapter.add(model);
-//
-//                                Toast.makeText(BookingActivity.this, "No Apply Park", Toast.LENGTH_SHORT).show();
-////                            } else if (model.getStatus().equals("RESERVED")) {
-//                            } else if (statusreceived == 5) {
-////                                    cardAll.setCardBackgroundColor(getResources().getColor(R.color.yellow));
-////                                changeStatus("RESERVED", slot);
-//                                chooseColor("RESERVED", cardAll);
-//                                registerPark(slot, "RESERVED");
-//                                adapter.add(model);
-//
-//                                Toast.makeText(BookingActivity.this, "Park is waiting vehicle", Toast.LENGTH_SHORT).show();
-//
-//                            } else {
-//                                Toast.makeText(BookingActivity.this, "Out Range Click", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        }
-//
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(BookingActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//
-//    }
-
-
-    //    private void loaddata(String slot) {
-//
-//        //
-//        chooseCard(slot);
-//        fStore.collection("parking")
-//                .whereEqualTo("slot", slot)
-//                .get()
-//                .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
-//                    @Override
-//                    public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
-//                        List<DocumentSnapshot> dsList = queryDocumentSnapshots.getDocuments();
-//
-//                        for (DocumentSnapshot ds : dsList) {
-//                            ParkCarModel model = ds.toObject(ParkCarModel.class);
-//                            if (model.getStatus().equals("EMPTY")) {
-////                            if(statusFromDB == "EMPTY"){
-////                                cardAll.setCardBackgroundColor(getResources().getColor(R.color.green));
-//                                changeStatus("EMPTY", slot);
-//                                adapter.add(model);
-//
-//                                Toast.makeText(BookingActivity.this, "Slot Empty", Toast.LENGTH_SHORT).show();
-//
-//
-//                            } else if (model.getStatus().equals("PARKED")) {
-////                                    cardAll.setCardBackgroundColor(getResources().getColor(R.color.red));
-//                                changeStatus("PARKED", slot);
-//
-//                                Toast.makeText(BookingActivity.this, "Slot Full", Toast.LENGTH_SHORT).show();
-//                            } else if (model.getStatus().equals("REVERSED")) {
-////                                    cardAll.setCardBackgroundColor(getResources().getColor(R.color.yellow));
-//
-//                                changeStatus("REVERSED", slot);
-//
-//                                Toast.makeText(BookingActivity.this, "Slot is waiting", Toast.LENGTH_SHORT).show();
-//
-//                            } else {
-//                                Toast.makeText(BookingActivity.this, "Out Range", Toast.LENGTH_SHORT).show();
-//                            }
-//
-//                        }
-//
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(BookingActivity.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-//                    }
-//                });
-//    }
     private void loaddata1(String slot) {
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Slot/0");
         reference.addValueEventListener(new ValueEventListener() {
@@ -943,36 +805,6 @@ public class BookingActivity extends AppCompatActivity
             }
         });
 
-//        Query checkUser = reference.orderByChild("1").equalTo(slot);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-////                    username.setError(null);
-////                    username.setErrorEnabled(false);
-//                    String statusFromDB = snapshot.child("Slot").child(slot).child("status").getValue(String.class);
-//                    statusreceived = Integer.valueOf(statusFromDB);
-//                    Toast.makeText(BookingActivity.this,"Receive data", Toast.LENGTH_SHORT).show();
-//
-//////                    }
-////                    else{
-//////                            ProgressBar.setVisibility(View.GONE);
-////                        password.setError("Wrong Password");
-////                        password.requestFocus();
-////                    }
-//                } else {
-////                    username.setError("No such User exist");
-////                    username.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
 
 
     } // xong
@@ -1061,36 +893,7 @@ public class BookingActivity extends AppCompatActivity
             }
         });
 
-//        Query checkUser = reference.orderByChild("1").equalTo(slot);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-////                    username.setError(null);
-////                    username.setErrorEnabled(false);
-//                    String statusFromDB = snapshot.child("Slot").child(slot).child("status").getValue(String.class);
-//                    statusreceived = Integer.valueOf(statusFromDB);
-//                    Toast.makeText(BookingActivity.this,"Receive data", Toast.LENGTH_SHORT).show();
-//
-//////                    }
-////                    else{
-//////                            ProgressBar.setVisibility(View.GONE);
-////                        password.setError("Wrong Password");
-////                        password.requestFocus();
-////                    }
-//                } else {
-////                    username.setError("No such User exist");
-////                    username.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
+
 
 
     } // xong
@@ -1179,37 +982,6 @@ public class BookingActivity extends AppCompatActivity
             }
         });
 
-//        Query checkUser = reference.orderByChild("1").equalTo(slot);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-////                    username.setError(null);
-////                    username.setErrorEnabled(false);
-//                    String statusFromDB = snapshot.child("Slot").child(slot).child("status").getValue(String.class);
-//                    statusreceived = Integer.valueOf(statusFromDB);
-//                    Toast.makeText(BookingActivity.this,"Receive data", Toast.LENGTH_SHORT).show();
-//
-//////                    }
-////                    else{
-//////                            ProgressBar.setVisibility(View.GONE);
-////                        password.setError("Wrong Password");
-////                        password.requestFocus();
-////                    }
-//                } else {
-////                    username.setError("No such User exist");
-////                    username.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-
 
     } // xong
 
@@ -1297,36 +1069,6 @@ public class BookingActivity extends AppCompatActivity
             }
         });
 
-//        Query checkUser = reference.orderByChild("1").equalTo(slot);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-////                    username.setError(null);
-////                    username.setErrorEnabled(false);
-//                    String statusFromDB = snapshot.child("Slot").child(slot).child("status").getValue(String.class);
-//                    statusreceived = Integer.valueOf(statusFromDB);
-//                    Toast.makeText(BookingActivity.this,"Receive data", Toast.LENGTH_SHORT).show();
-//
-//////                    }
-////                    else{
-//////                            ProgressBar.setVisibility(View.GONE);
-////                        password.setError("Wrong Password");
-////                        password.requestFocus();
-////                    }
-//                } else {
-////                    username.setError("No such User exist");
-////                    username.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
 
 
     } // xong
@@ -1401,139 +1143,7 @@ public class BookingActivity extends AppCompatActivity
                 });
     }
 
-    //    private void checkdata(String slot) {
-//
-//        DocumentReference documentReference = fStore.collection("parking").document(slot);
-//        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                        if (!documentSnapshot.exists()) {
-//
-////                    Date.setText(String.valueOf(documentSnapshot.getString("time")));
-//                            registerPark(slot, status_init);
-//                            Toast.makeText(getApplicationContext(), "Data register Successful", Toast.LENGTH_LONG).show();
-////                            loaddata(slot);
-//                        } else {
-////                            registerPark(slot);
-////                            checkPark(slot);
-//                            loaddata(slot);
-////                            Toast.makeText(getApplicationContext(), "Data field empty", Toast.LENGTH_LONG).show();
-//                        }
-//
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(getApplicationContext(), "Data empty", Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//    }
-//    private void checkdata(String slot) {
-//
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Slot");
-//        reference.addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                String data = snapshot.child(slot).child("status").getValue().toString();
-//                Integer data2 = Integer.valueOf(data);
-////                CHECKDATA1(slot, data2);
-//                data2 = statusreceived;
-//                DocumentReference documentReference = fStore.collection("parking").document(slot);
-//                documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                            @Override
-//                            public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                                if (documentSnapshot.exists()) {
-//                                    loaddata(slot);
-//
-////                    Date.setText(String.valueOf(documentSnapshot.getString("time")));
-////                            registerPark(slot, "RESERVED");
-//                                    Toast.makeText(getApplicationContext(), "Data register Successful", Toast.LENGTH_LONG).show();
-////                            loaddata(slot);
-//                                } else {
-////                            registerPark(slot);
-////                            checkPark(slot);
-//
-//                                    Toast.makeText(getApplicationContext(), "Data field empty", Toast.LENGTH_LONG).show();
-//                                }
-//
-//                            }
-//                        })
-//                        .addOnFailureListener(new OnFailureListener() {
-//                            @Override
-//                            public void onFailure(@NonNull Exception e) {
-//                                Toast.makeText(getApplicationContext(), "Data empty", Toast.LENGTH_LONG).show();
-//                            }
-//                        });
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//
-////    Query checkUser = reference.orderByChild("1").equalTo(slot);
-////
-////    checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-////        @Override
-////        public void onDataChange(@NonNull DataSnapshot snapshot) {
-////            if (snapshot.exists()) {
-//////                    username.setError(null);
-//////                    username.setErrorEnabled(false);
-////                String statusFromDB = snapshot.child("Slot").child(slot).child("status").getValue().toString();
-////                statusreceived = Integer.valueOf(statusFromDB);
-////                Toast.makeText(BookingActivity.this,"Receive data", Toast.LENGTH_SHORT).show();
-////
-////////                    }
-//////                    else{
-////////                            ProgressBar.setVisibility(View.GONE);
-//////                        password.setError("Wrong Password");
-//////                        password.requestFocus();
-//////                    }
-////            } else {
-//////                    username.setError("No such User exist");
-//////                    username.requestFocus();
-////            }
-////        }
-////
-////        @Override
-////        public void onCancelled(@NonNull DatabaseError error) {
-//////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-////
-////        }
-////    });
-//
-//
-//    }
-//
-//    private void CHECKDATA1(String slot, Integer data) {
-//        DocumentReference documentReference = fStore.collection("parking").document(slot);
-//        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                    @Override
-//                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                        if (!documentSnapshot.exists()) {
-//
-////                    Date.setText(String.valueOf(documentSnapshot.getString("time")));
-////                            registerPark(slot, "RESERVED");
-//                            Toast.makeText(getApplicationContext(), "Data register Successful", Toast.LENGTH_LONG).show();
-////                            loaddata(slot);
-//                        } else {
-////                            registerPark(slot);
-////                            checkPark(slot);
-//                            loaddata(slot);
-////                            Toast.makeText(getApplicationContext(), "Data field empty", Toast.LENGTH_LONG).show();
-//                        }
-//
-//                    }
-//                })
-//                .addOnFailureListener(new OnFailureListener() {
-//                    @Override
-//                    public void onFailure(@NonNull Exception e) {
-//                        Toast.makeText(getApplicationContext(), "Data empty", Toast.LENGTH_LONG).show();
-//                    }
-//                });
-//    }
+
 
     @Override
     public boolean onLongClick(View v) {
@@ -1632,62 +1242,5 @@ public class BookingActivity extends AppCompatActivity
         });
     }
 
-//    private void checkstatusaccount() {
-////        final String userEnteredUsername = username.getEditText().getText().toString().trim();
-////        final String userEnteredPassword = password.getEditText().getText().toString().trim();
-//
-//
-//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users");
-//
-//        Query checkUser = reference.orderByChild("username").equalTo(_USERNAME);
-//
-//        checkUser.addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                if (snapshot.exists()) {
-//                    String statusFromDB = snapshot.child(_USERNAME).child("status").getValue(String.class);
-//                    String slotFromDB = snapshot.child(_USERNAME).child("slot").getValue(String.class);
-//
-////                    username.setError(null);
-////                    username.setErrorEnabled(false);
-//
-////                        String passwordFromDB = snapshot.child(_USERNAME).child("password").getValue(String.class);
-////
-//////                    if(passwordFromDB.equals(userEnteredPassword)){
-////
-////                        String nameFromDB = snapshot.child(_USERNAME).child("name").getValue(String.class);
-////                        String usernameFromDB = snapshot.child(_USERNAME).child("username").getValue(String.class);
-////                        String phoneNoFromDB = snapshot.child(_USERNAME).child("phoneNo").getValue(String.class);
-////                        String emailFromDB = snapshot.child(_USERNAME).child("email").getValue(String.class);
-//
-//                    Intent intent = new Intent(getApplicationContext(), UserProfile.class);
-//
-////                        intent.putExtra("name", nameFromDB);
-////                        intent.putExtra("username", usernameFromDB);
-////                        intent.putExtra("email", emailFromDB);
-////                        intent.putExtra("phoneNo", phoneNoFromDB);
-////                        intent.putExtra("password", passwordFromDB);
-//
-//                    startActivity(intent);
-//
-//
-//////                    }
-////                    else{
-//////                            ProgressBar.setVisibility(View.GONE);
-////                        password.setError("Wrong Password");
-////                        password.requestFocus();
-////                    }
-//                } else {
-////                    username.setError("No such User exist");
-////                    username.requestFocus();
-//                }
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-////                Toast.makeText(Login.this, error.getMessage(),Toast.LENGTH_SHORT).show();
-//
-//            }
-//        });
-//    }
+
 }
